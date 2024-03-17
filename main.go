@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"os"
 )
 
 func main() {
@@ -10,7 +10,8 @@ func main() {
 	fmt.Print("Введите данные: ")
 	_, err := fmt.Scan(&n)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println("Ошибка ввода: ", err)
+		os.Exit(1)
 	}
 	fmt.Printf("Вы ввели следующие данные: %s\n", n)
 }
